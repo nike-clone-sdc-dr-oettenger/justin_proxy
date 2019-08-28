@@ -3,27 +3,79 @@ const proxy = express();
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
+//comment to update git
+
+// const mayLikeUrl = 'http://localhost:1128/shoes';
+// const imageUrl = 'http://localhost:1121/api/images';
+// const reviewsUrl = 'http://localhost:3000/';
+
 const port = 6969;
 proxy.use(bodyParser.json());
+
+proxy.use(express.static('client'))
+
+// proxy.use('mayLike', )
+// proxy.get(reviewsUrl, (req, res) => {
+//   console.log('heres the request,', req);
+//   console.log('heres the response', res);
+//   res.send(200).send(res);
+// });
 
 proxy.listen(port, () =>
   console.log(`Proxy Server listening on port ${port}!`)
 );
 
-proxy.get('/api/reviews', (req, res) => {
-  axios({
-    method: 'get',
-    url: 'http://127.0.0.1:3000/api/reviews'
-  });
-});
+// proxy.all('youMayLike/*', (req, res) => {
+//   console.log(`Redirecting your requrest to ${mayLikeUrl}.`);
 
-//commit
+//   axios
+//     .get({
+//       url: '/shoes',
+//       proxy: {
+//         host: '127.0.0.1',
+//         port: 1128
+//       }
+//     })
+//     .then(data => {
+//       res.status(200).send(data);
+//     })
+//     .catch(err => {
+//       alert(err);
+//     });
+// });
 
-//for potential shoe info from marcus's database
+// proxy.all('imageUrl/*', (req, res) => {
+//   console.log(`Redirecting your requrest to ${imageUrl}.`);
+//   axios
+//     .get({
+//       url: '/api/images',
+//       proxy: {
+//         host: '127.0.0.1',
+//         port: 1121
+//       }
+//     })
+//     .then(data => {
+//       res.status(200).send(data);
+//     })
+//     .catch(err => {
+//       alert(err);
+//     });
+// });
 
-// proxy.get('/shoes', (req, res) => {
-//   axios({
-//     method: 'get',
-//     url: 'http://127.0.0.1:1128/api/reviews'
-//   });
+// proxy.all('reviewsUrl/*', (req, res) => {
+//   console.log(`Redirecting your requrest to ${reviewsUrl}.`);
+//   axios
+//     .get({
+//       url: 'api/reviews',
+//       proxy: {
+//         host: '127.0.0.1',
+//         port: 3000
+//       }
+//     })
+//     .then(data => {
+//       res.status(200).send(data);
+//     })
+//     .catch(err => {
+//       alert(err);
+//     });
 // });
