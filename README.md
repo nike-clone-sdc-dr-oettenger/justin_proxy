@@ -4,7 +4,7 @@
 
 ### Installing
 
-To install dependencies, webpack and seed data:
+To install and run proxy server and concurrent servers:
 
 ```
 npm install
