@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/index.js",
-    "start": "concurrently \"nodemon server/index.js\" \"cd canvas && npm run start\" \"cd productinfo-reviews && npm run server\" \"cd you-may-like && npm run start\""
+    "start": "concurrently --kill-others \"nodemon server/index.js\" \"cd microservices/canvas && npm run start\" \"cd microservices/productinfo-reviews && npm run server\" \"cd microservices/you-may-like && npm run start\""
   },
   "author": "",
   "license": "ISC",
