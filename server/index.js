@@ -2,24 +2,17 @@ const express = require('express');
 const proxy = express();
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const cors = require('cors');
 
-//comment to update git
-
-// const mayLikeUrl = 'http://localhost:1128/shoes';
-// const imageUrl = 'http://localhost:1121/api/images';
-// const reviewsUrl = 'http://localhost:3000/';
+const mayLikeUrl = 'http://localhost:1128/shoes';
+const imageUrl = 'http://localhost:1121/api/images';
+const reviewsUrl = 'http://localhost:3000/api/reviews';
 
 const port = 6969;
+
+proxy.use(cors());
 proxy.use(bodyParser.json());
-
-proxy.use(express.static('client'))
-
-// proxy.use('mayLike', )
-// proxy.get(reviewsUrl, (req, res) => {
-//   console.log('heres the request,', req);
-//   console.log('heres the response', res);
-//   res.send(200).send(res);
-// });
+proxy.use(express.static('client'));
 
 proxy.listen(port, () =>
   console.log(`Proxy Server listening on port ${port}!`)
@@ -37,6 +30,7 @@ proxy.listen(port, () =>
 //       }
 //     })
 //     .then(data => {
+//       console.log('marcus data', data);
 //       res.status(200).send(data);
 //     })
 //     .catch(err => {
