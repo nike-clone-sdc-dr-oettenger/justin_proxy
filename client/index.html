@@ -10,19 +10,33 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- Justin's StyleSheet -->
+    <link
+      rel="Jstylesheet"
+      href="microservices/productinfo-reviews/public/dist/styles.css"
+    />
+    <!-- <link
+      rel="Jstylesheet"
+      href="http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/styles.css"
+    /> -->
 
     <title>Proxy Server</title>
   </head>
   <body>
     <div class="row">
-      <div class="col-8" id="canvas"></div>
-      <div class="col-4" id="reviewApp"></div>
+      <div class="col-7" id="canvas"></div>
+      <div class="col-5" id="reviewApp"></div>
     </div>
-    <div id="youMayLike">Marcus</div>
-
-    <script src="http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/bundle.js"></script>
-    <script src="http://ec2-34-207-125-253.compute-1.amazonaws.com:1121/bundle.js"></script>
-    <script src="http://you-may-like-dev.us-west-2.elasticbeanstalk.com/bundle.js"></script>
+    <div id="youMayLike"></div>
+    <!-- Justin's Bundles -->
+    <!-- <script src="http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/bundle.js"></script> -->
+    <script src="http://localhost:3000/bundle.js"></script>
+    <!-- Richard's Bundles -->
+    <!-- <script src="http://ec2-34-207-125-253.compute-1.amazonaws.com:1121/bundle.js"></script> -->
+    <script src="http://localhost:1121/bundle.js"></script>
+    <!-- Marcus's Bundles -->
+    <!-- <script src="http://you-may-like-dev.us-west-2.elasticbeanstalk.com/bundle.js"></script> -->
+    <script src="http://localhost:1128/bundle.js"></script>
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
