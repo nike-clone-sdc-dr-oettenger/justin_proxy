@@ -11,11 +11,11 @@ proxy.use(bodyParser.json());
 proxy.use(express.static('client'));
 proxy.use(bodyParser.urlencoded({ extended: true }));
 
-const reviewsUrl = 'http://localhost:3000/api/reviews';
+const reviewsUrl =
+  'http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/api/reviews';
 
 proxy.get('/api/reviews', (req, res) => {
   // res.status(200).send('endpoint');
-
   console.log(req.query.shoe_id, 'shoe id');
   console.log('request going to microservice');
   axios
