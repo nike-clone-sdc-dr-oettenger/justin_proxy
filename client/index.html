@@ -11,42 +11,35 @@
       crossorigin="anonymous"
     />
     <!-- Justin's StyleSheet -->
-    <!-- <link
-      rel="Jstylesheet"
-      href="microservices/productinfo-reviews/public/dist/styles.css"
-    /> -->
     <link
       rel="Jstylesheet"
-      href="http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/styles.css"
+      href="microservices/productinfo-reviews/public/dist/styles.css"
     />
+    <!-- <link
+      rel="Jstylesheet"
+      href="http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/styles.css"
+    /> -->
 
     <link
       rel="Mstylesheet"
       href="http://you-may-like-dev.us-west-2.elasticbeanstalk.com/styles.css"
     />
 
-    <style>
-      .canvas {
-        margin-right: 200px;
-        padding-left: 100px;
-      }
-      .reviewApp {
-        margin-left: 100px;
-        padding-right: 30px;
-        padding-left: 450px;
-      }
-    </style>
     <title>Proxy Server</title>
   </head>
   <body>
     <div class="row">
-      <div class="col-7" id="canvas"></div>
-      <div class="col-5" id="reviewApp" style="padding-right: 70px;"></div>
+      <div
+        class="col-8"
+        id="canvas"
+        style="padding-left: 70px; padding-right:50px"
+      ></div>
+      <div class="col-4" id="reviewApp" style="padding-right: 90px;"></div>
     </div>
     <div id="youMayLike"></div>
     <!-- Justin's Bundles -->
-    <script src="http://ec2-3-19-224-179.us-east-2.compute.amazonaws.com/bundle.js"></script>
-    <!-- <script src="http://localhost:3000/bundle.js"></script> -->
+    <!-- <script src="http://ec2-3-19-224-179.us-east-2.compute.amazonaws.com/bundle.js"></script> -->
+    <script src="http://localhost:3000/bundle.js"></script>
     <!-- Richard's Bundles -->
     <script src="http://ec2-18-207-197-100.compute-1.amazonaws.com:1121/bundle.js"></script>
     <!-- <script src="http://localhost:1121/bundle.js"></script> -->

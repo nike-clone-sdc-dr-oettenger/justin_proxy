@@ -25,7 +25,6 @@ proxy.get('/api/reviews', (req, res) => {
       }
     })
     .then(response => {
-      console.log('response data', response.data);
       res.status(200).send(response.data);
     })
     .catch(err => {
