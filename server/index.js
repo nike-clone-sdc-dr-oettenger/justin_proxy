@@ -8,11 +8,11 @@ const axios = require('axios');
 
 proxy.use(cors());
 proxy.use(bodyParser.json());
-proxy.use(express.static('client'));
+proxy.use(express.static('../client'));
 proxy.use(bodyParser.urlencoded({ extended: true }));
 
 const reviewsUrl =
-  'http://productinforeviews-env.ergwvejvxp.us-east-2.elasticbeanstalk.com/api/reviews';
+  'http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com/api/reviews';
 
 proxy.get('/api/reviews', (req, res) => {
   // res.status(200).send('endpoint');
