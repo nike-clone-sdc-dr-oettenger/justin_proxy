@@ -11,7 +11,7 @@ app.use(cors());
 
 var urls = ['instance1', 'instance2', 'instance3']
 
-app.get('/', (req, res) => {
+app.get('/abc', (req, res) => {
   console.log('get request to load balancer');
   //send random url's bundle
   request('ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/bundle.js', (err, response, body) => {
