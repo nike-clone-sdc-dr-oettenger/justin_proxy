@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const compression = require('compression');
+//const compression = require('compression');
 const axios = require('axios');
 const port = 3000;
 const cors = require('cors');
@@ -29,7 +29,7 @@ var urls = ['http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/bundle.
 app.listen(port, () => {
   console.log(`App is listening on LoadBalancer Port ${port}`);
 });
-app.use(compression());
+//app.use(compression());
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,6 +40,7 @@ var getRandomIndex = function() {
 }
 app.get('/', (req, res) =>{
   //body is bundle
+  console.log('load balancer hit');
   request(urls[getRandomIndex()], function(err, response, body){
     // console.log('sexy body', JSON.parse(body))
     res.send(body)
