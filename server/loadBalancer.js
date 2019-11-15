@@ -9,13 +9,30 @@ app.use(bodyParser());
 
 app.use(cors());
 
-var urls = ['instance1', 'instance2', 'instance3']
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
-app.get('/abc', (req, res) => {
-  console.log('get request to load balancer');
-  //send random url's bundle
-  request('ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/bundle.js', (err, response, body) => {
-    res.send(body);
+var getRandomIndex = function() {
+  return getRandomInt(2);
+}
+
+var urls = ['http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/api/reviews', 'http://ec2-35-165-229-57.us-west-2.compute.amazonaws.com:3000/api/reviews']
+
+
+
+app.get('/api/reviews', (req, res) => {
+  console.log('recieving load balanced get request');
+  let shoeId = req.query.shoe_id;
+  let url = urls[getRandomIndex()]
+  console.log('load balancer request url', url);
+  request(url, {
+    qs: {
+      shoe_id: shoeId
+    }
+  }, (err, response, body) => {
+    console.log('npm request response body', body);
+    res.end();
   })
 })
 

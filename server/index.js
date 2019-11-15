@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || 6969;
 const axios = require('axios');
+const request = require('request');
 
 proxy.use(cors());
 proxy.use(bodyParser.json());
@@ -49,6 +50,30 @@ proxy.get('/api/reviews', (req, res) => {
 
 //   // axios.get('/');
 // });
+
+var getRandomIndex = function() {
+  return getRandomInt(2);
+}
+
+var urls = ['http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/api/reviews', 'http://ec2-35-165-229-57.us-west-2.compute.amazonaws.com:3000/api/reviews']
+
+
+
+app.get('/api/reviews', (req, res) => {
+  console.log('recieving load balanced get request');
+  let shoeId = req.query.shoe_id;
+  let url = urls[getRandomIndex()]
+  console.log('load balancer request url', url);
+  request(url, {
+    qs: {
+      shoe_id: shoeId
+    }
+  }, (err, response, body) => {
+    console.log('npm request response body', body);
+    res.end();
+  })
+})
+
 
 proxy.listen(port, () =>
   console.log(`Proxy Server listening on port ${port}!`)
