@@ -53,3 +53,18 @@ proxy.get('/api/reviews', (req, res) => {
 proxy.listen(port, () =>
   console.log(`Proxy Server listening on port ${port}!`)
 );
+
+
+/*
+
+What do i need to do
+make a load balancer
+the load balancer exists on the proxy in a script tag
+  lets start with 2 instances
+  load balancer makes a get request to the instance using npm request
+  the instance res.sends the bundle
+  
+  switch randomly between the two
+
+
+*/
