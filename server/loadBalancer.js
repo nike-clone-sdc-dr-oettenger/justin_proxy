@@ -26,9 +26,7 @@ console.log(getRandomInt(3));
 
 // var urls = ['http://ec2-54-153-99-135.us-west-1.compute.amazonaws.com', 'http://ec2-13-56-178-145.us-west-1.compute.amazonaws.com/', 'http://ec2-13-57-16-171.us-west-1.compute.amazonaws.com/'];
 var urls = ['http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/bundle.js', 'http://ec2-35-165-229-57.us-west-2.compute.amazonaws.com:3000/bundle.js'];
-app.listen(port, () => {
-  console.log(`App is listening on LoadBalancer Port ${port}`);
-});
+
 //app.use(compression());
 app.use(bodyParser.json());
 app.use(cors());
@@ -49,3 +47,7 @@ app.get('/', (req, res) =>{
 
   
 })
+
+app.listen(port, () => {
+  console.log(`App is listening on LoadBalancer Port ${port}`);
+});
