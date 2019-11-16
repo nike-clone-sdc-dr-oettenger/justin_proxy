@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || 6969;
 const axios = require('axios');
-const request = require('request');
+
 
 proxy.use(cors());
 proxy.use(bodyParser.json());
