@@ -14,7 +14,7 @@ proxy.use(bodyParser.urlencoded({ extended: true }));
 
 const reviewsUrl =
   'http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com/api/reviews';
-
+/* justins code uncomment later
 proxy.get('/api/reviews', (req, res) => {
   // res.status(200).send('endpoint');
   console.log(req.query.shoe_id, 'shoe id');
@@ -31,7 +31,9 @@ proxy.get('/api/reviews', (req, res) => {
     .catch(err => {
       console.log(err);
     });
-});
+});*/
+
+
 // proxy.all('/api/reviews', (req, res) => {
 //   console.log(`Redirecting request to ${reviewsUrl}.`);
 //   console.log(req.body);
