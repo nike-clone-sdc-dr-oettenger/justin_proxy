@@ -59,7 +59,7 @@ var urls = ['http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/api/rev
 
 
 
-app.get('/api/reviews', (req, res) => {
+proxy.get('/api/reviews', (req, res) => {
   console.log('recieving load balanced get request');
   let shoeId = req.query.shoe_id;
   let url = urls[getRandomIndex()]
