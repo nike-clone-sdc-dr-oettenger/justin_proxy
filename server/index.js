@@ -78,7 +78,7 @@ proxy.get('/api/reviews', (req, res) => {
     }
   }, (err, response, body) => {
     console.log('npm request response body', body);
-    res.send(body);
+    res.sendStatus(200);
   })
 })
 
