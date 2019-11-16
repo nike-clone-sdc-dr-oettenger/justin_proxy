@@ -53,6 +53,10 @@ proxy.get('/api/reviews', (req, res) => {
 //   // axios.get('/');
 // });
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 var getRandomIndex = function() {
   return getRandomInt(2);
 }
