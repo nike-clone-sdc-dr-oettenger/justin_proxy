@@ -63,7 +63,9 @@ var getRandomIndex = function() {
 
 var urls = ['http://ec2-52-38-28-66.us-west-2.compute.amazonaws.com:3000/api/reviews', 'http://ec2-35-165-229-57.us-west-2.compute.amazonaws.com:3000/api/reviews']
 
-
+proxy.get('/loaderio-7cef7f78c8897164e086d4dea10e31f0', (req, res) => {
+  res.send('loaderio-7cef7f78c8897164e086d4dea10e31f0');
+})
 
 proxy.get('/api/reviews', (req, res) => {
   console.log('recieving load balanced get request');
@@ -76,7 +78,7 @@ proxy.get('/api/reviews', (req, res) => {
     }
   }, (err, response, body) => {
     console.log('npm request response body', body);
-    res.end();
+    res.send(body);
   })
 })
 
